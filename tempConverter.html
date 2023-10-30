@@ -1,10 +1,8 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CD Calculator</title>
+  <title>Temperature Converter</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
@@ -40,7 +38,7 @@
               <a class="nav-link" href="mortgageCalculator.html">Mortgage</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="cdCalculator.html">CD</a>
+              <a class="nav-link" href="cdCalculator.html">CD</a>
             </li>
 
             <li class="nav-item">
@@ -48,7 +46,7 @@
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="tempConverter.html">Temperature</a>
+              <a class="nav-link active" aria-current="page" href="tempConverter.html">Temperature</a>
             </li>
 
           </ul>
@@ -61,49 +59,24 @@
   <main class="container">
     <div class="row">
       <div class="col">
-        <h1>Certificate of Deposit (CD) Calculator</h1>
+        <h1>Temperature Converter</h1>
       </div>
     </div>
 
 
     <div class="box" style="text-align: center;">
       <div class="boxrow mb-3 g-1 align-items-center">
-        <label class="form-label" for="inputPrincipal">Principal: </label>
-        <input class="form" id="inputPrincipal" type="text" style="width: 10em;">
-        <br>
-        <label class="form-label" for="inputTermLength">Term Length: </label>
-        <input class="form" id="inputTermLength" type="text" style="width: 10em;">
-        <br>
-        <label class="form-label" for="inputInterest">APY %: </label>
-        <input class="form" id="inputInterest" type="text" style="width: 10em;">
-      </div>
+        <label for="fahrenheitInput">Fahrenheit:</label>
+        <input type="text" id="fahrenheitInput">
+        <button onclick="convertToFahrenheit()">Convert to Celsius</button>
 
+        <label for="celsiusInput">Celsius:</label>
+        <input type="text" id="celsiusInput">
+        <button onclick="convertToCelsius()">Convert to Fahrenheit</button>
 
+        <p id="result"></p>
 
-      <div class="row mb-3 g-3 align-items-center">
-        <div class="col">
-          <input type="button" class="btn btn-primary" id="buttonCalculate" value="Calculate!">
-        </div>
-      </div>
-
-      <label class="form-label" for="outputInterestEarned">Interest Earned: </label>
-      <input class="form" id="outputInterestEarned" readonly type="text"><br>
-      <label class="form-label" for="outputTotalAmount"><b>Total: </b></label>
-      <input class="form" id="outputTotalAmount" readonly type="text">
-    </div>
-
-  </main>
-
-
-  <footer class="container">
-    <div class="row">
-      <div class="col">
-      </div>
-    </div>
-
-  </footer>
-
-  <script src="scripts/cdCalculator.js"></script>
+        <script src="scripts/tempCalculator.js"></script>
 </body>
 
 </html>
