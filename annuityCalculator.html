@@ -68,14 +68,14 @@
 
     <div class="box" style="text-align: center;">
       <div class="boxrow mb-3 g-1 align-items-center">
-        <label class="form-label" for="inputPrincipal">Principal: </label>
-        <input class="form" id="inputPrincipal" type="text" style="width: 10em;">
+        <label class="form-label" for="inputMonthlyPayout">Monthly Payout: </label>
+        <input class="form" id="inputMonthlyPayout" type="text" style="width: 10em;">
         <br>
-        <label class="form-label" for="inputTermLength">Term Length: </label>
-        <input class="form" id="inputTermLength" type="text" style="width: 10em;">
+        <label class="form-label" for="inputYearsToPayout">Number of Years #: </label>
+        <input class="form" id="inputYearsToPayout" type="text" style="width: 10em;">
         <br>
-        <label class="form-label" for="inputInterest">APY %: </label>
-        <input class="form" id="inputInterest" type="text" style="width: 10em;">
+        <label class="form-label" for="inputExpectedInterest">Interest Rate %: </label>
+        <input class="form" id="inputExpectedInterest" type="text" style="width: 10em;">
       </div>
 
 
@@ -87,8 +87,8 @@
       </div>
 
     
-      <label class="form-label" for="outputFutureValue"><b>Future Value </b></label>
-      <input class="form" id="outputFutureValue" readonly type="text">
+      <label class="form-label" for="outputPresentValue"><b>Present Value: </b></label>
+      <input class="form" id="outputPresentValue" readonly type="text">
     </div>
 
   </main>
@@ -102,7 +102,7 @@
 
   </footer>
 
-  <script src="scripts/cdCalculator.js"></script>
+  <script src="scripts/annuityCalculator.js"></script>
 </body>
 
 </html>

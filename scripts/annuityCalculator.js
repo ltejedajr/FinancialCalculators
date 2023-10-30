@@ -8,25 +8,26 @@ function init() {
 }
 
 function buttonCalculateClick() {
-    // Get the starting values.
-    const inputPrincipal = document.getElementById("inputPrincipal");
-    const inputTermLength = document.getElementById("inputTermLength");
-    const inputInterest = document.getElementById("inputInterest");
-    const outputFutureValue = document.getElementById("outputFutureValue");
+    // Get the input values from the user.
+    const inputMonthlyPayout = document.getElementById("inputMonthlyPayout");
+    const inputYearsToPayout = document.getElementById("inputYearsToPayout");
+    const inputExpectedInterest = document.getElementById("inputExpectedInterest");
+    const outputPresentValue = document.getElementById("outputPresentValue");
 
-    let principal = Number(inputPrincipal.value);
-    let termLength = Number(inputTermLength.value);
-    let annualInterest = Number(inputInterest.value) / 100; // Convert to decimal.
-    
-    // Calculate the future value of the annuity.
-    let n = 12; // Assume monthly contributions
-    let r = annualInterest / n;
-    let t = termLength * n;
+    let monthlyPayout = Number(inputMonthlyPayout.value);
+    let yearsToPayout = Number(inputYearsToPayout.value);
+    let expectedInterest = Number(inputExpectedInterest.value) / 100; // Convert to decimal.
 
-    let futureValue = principal * ((Math.pow(1 + r, t) - 1) / r);
-    
+    // Calculate the present value of the annuity.
+    let n = 12; // Monthly contributions
+    let r = expectedInterest / n;
+    let t = yearsToPayout * n;
+
+    // Calculate the present value using the annuity formula.
+    let presentValue = monthlyPayout * ((1 - Math.pow(1 + r, -t)) / r);
+
     // Display the output.
-    outputFutureValue.value = futureValue.toFixed(2);
+    outputPresentValue.value = presentValue.toFixed(2);
 }
 
 // Formula for the future value of an annuity:
