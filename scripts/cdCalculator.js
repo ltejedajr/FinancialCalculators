@@ -18,7 +18,6 @@ function buttonCalculateClick() {
     let principal = Number(inputPrincipal.value);
     let termLength = Number(inputTermLength.value);
     let annualInterest = Number(inputInterest.value) / 100; // Convert to decimal.
-    // let annualInterestPercentage = annualInterest / 100; // Convert to decimal.
     
     // Calculate the unknown values.
     let totalAmount = principal * Math.pow(1 + annualInterest / 365, 365 * termLength);
