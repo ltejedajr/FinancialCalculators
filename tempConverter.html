@@ -10,7 +10,7 @@
 <style>
   .box {
     width: 600px;
-    height: 400px;
+    height: 200px;
     border: 1px solid black;
     padding: 20px;
   }
@@ -66,17 +66,19 @@
 
     <div class="box" style="text-align: center;">
       <div class="boxrow mb-3 g-1 align-items-center">
-        <label for="fahrenheitInput">Fahrenheit:</label>
-        <input type="text" id="fahrenheitInput">
-        <button onclick="convertToFahrenheit()">Convert to Celsius</button>
 
         <label for="celsiusInput">Celsius:</label>
         <input type="text" id="celsiusInput">
-        <button onclick="convertToCelsius()">Convert to Fahrenheit</button>
+        <button id="convertCToFBtn">Convert to Fahrenheit</button>
 
-        <p id="result"></p>
+        <label for="fahrenheitInput">Fahrenheit:</label>
+        <input type="text" id="fahrenheitInput">
+        <button id="convertFToCBtn">Convert to Celsius</button>
 
-        <script src="scripts/tempCalculator.js"></script>
+        <p id="farenheitResult"></p>
+        <p id="celsiusResult"></p>
+
+        <script src="scripts/tempConverter.js"></script>
 </body>
 
 </html>

@@ -1,21 +1,38 @@
 "use strict";
 
-function convertToFahrenheit() {
-    const celsius = parseFloat(document.getElementById("celsiusInput").value);
-    if (!isNaN(celsius)) {
-        const fahrenheit = (celsius * 9/5) + 32;
-        document.getElementById("result").textContent = `Fahrenheit: ${fahrenheit.toFixed(2)}`;
+window.onload = init;
+
+function init() {
+    const convertCToFBtn = document.getElementById("convertCToFBtn");
+    convertCToFBtn.onclick = convertCToFBtnClicked;
+
+    const convertFToCBtn = document.getElementById("convertFToCBtn");
+    convertFToCBtn.onclick = convertFToCBtnClicked;
+}
+
+function convertCToFBtnClicked() {
+    const celsius = Number(document.getElementById("celsiusInput").value);
+
+    if (celsius) {
+        const fahrenheit = (celsius * 9 / 5) + 32;
+        return document.getElementById("farenheitResult").innerText = `Fahrenheit: ${fahrenheit} º`;
     } else {
-        document.getElementById("result").textContent = "Please enter a valid number for Celsius.";
+        document.getElementById("farenheitResult").innerText = "Please enter a valid number for Celsius.";
     }
 }
 
-function convertToCelsius() {
-    const fahrenheit = parseFloat(document.getElementById("fahrenheitInput").value);
-    if (!isNaN(fahrenheit)) {
-        const celsius = (fahrenheit - 32) * 5/9;
-        document.getElementById("result").textContent = `Celsius: ${celsius.toFixed(2)}`;
-    } else {
-        document.getElementById("result").textContent = "Please enter a valid number for Fahrenheit.";
+function convertFToCBtnClicked() {
+    const fahrenheit = Number(document.getElementById("fahrenheitInput").value);
+
+    if (fahrenheit) {
+        const celsius = (fahrenheit - 32) * 5 / 9;
+        return document.getElementById("celsiusResult").innerText = `Celsius: ${celsius.toFixed(1)} º`;
     }
+
+    document.getElementById("celsiusResult").innerText = "Please enter a valid number for Fahrenheit.";
 }
+
+
+
+
+
